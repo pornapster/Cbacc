@@ -12,3 +12,10 @@ Tr_modules = []
 configured = False
 task_queue = Queue.Queue()
 
+def connect_to_github():
+	gh = login(username="youruser",password="yourpass")
+	repo = gh.repository("youruser", "Cbacc")
+	branch = repo.branch("master")
+
+	return gh,repo,branch
+
